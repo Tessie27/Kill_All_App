@@ -1,5 +1,5 @@
 """
-Styles for the App Closer - Modern Theme
+Enhanced Styles for the App Closer - Modern Theme
 """
 
 APP_STYLES = """
@@ -20,7 +20,7 @@ APP_STYLES = """
         font-size: 10pt;
     }
     
-    /* Title Bar - Keep default style but change color */
+    /* Title Bar */
     QWidget::title {
         background-color: #252526;
         color: #CCCCCC;
@@ -33,7 +33,7 @@ APP_STYLES = """
         border-radius: 8px;
         border: 1px solid #3E3E42;
         margin: 8px;
-        padding: 5px;
+        padding: 8px;
     }
     
     /* Content Sections */
@@ -41,7 +41,7 @@ APP_STYLES = """
         background-color: #252526;
         border-radius: 6px;
         border: 1px solid #3E3E42;
-        margin: 8px;
+        margin: 4px;
         padding: 8px;
     }
     
@@ -53,7 +53,7 @@ APP_STYLES = """
     }
     
     QLabel#title {
-        font-size: 13pt;
+        font-size: 14pt;
         font-weight: bold;
         color: #569CD6;
         padding: 6px;
@@ -62,9 +62,53 @@ APP_STYLES = """
     
     QLabel#status {
         font-size: 9pt;
-        color: #969696;
+        color: #90EE90;
         padding: 3px;
         background-color: transparent;
+    }
+    
+    QLabel#memory {
+        font-size: 9pt;
+        color: #FFD166;
+        padding: 3px;
+        background-color: transparent;
+    }
+    
+    QLabel#saved {
+        font-size: 9pt;
+        color: #90EE90;
+        padding: 3px;
+        background-color: transparent;
+    }
+    
+    /* Tab Widget */
+    QTabWidget::pane {
+        border: 1px solid #3E3E42;
+        border-radius: 4px;
+        background-color: #252526;
+    }
+    
+    QTabWidget::tab-bar {
+        alignment: center;
+    }
+    
+    QTabBar::tab {
+        background-color: #2D2D30;
+        color: #CCCCCC;
+        padding: 8px 16px;
+        margin: 2px;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        font-weight: bold;
+    }
+    
+    QTabBar::tab:selected {
+        background-color: #0E639C;
+        color: #FFFFFF;
+    }
+    
+    QTabBar::tab:hover:!selected {
+        background-color: #37373D;
     }
     
     /* List Widget */
@@ -79,7 +123,7 @@ APP_STYLES = """
     }
     
     QListWidget::item {
-        padding: 6px;
+        padding: 8px;
         border-bottom: 1px solid #2D2D30;
         background-color: #1E1E1E;
         margin: 1px;
@@ -98,16 +142,66 @@ APP_STYLES = """
         border-radius: 3px;
     }
     
+    /* Group Box */
+    QGroupBox {
+        color: #569CD6;
+        font-weight: bold;
+        border: 1px solid #3E3E42;
+        border-radius: 6px;
+        margin-top: 10px;
+        padding-top: 10px;
+    }
+    
+    QGroupBox::title {
+        subcontrol-origin: margin;
+        subcontrol-position: top center;
+        padding: 0 8px;
+        background-color: #252526;
+    }
+    
+    /* Text Edit */
+    QTextEdit {
+        background-color: #1E1E1E;
+        color: #CCCCCC;
+        border: 1px solid #3E3E42;
+        border-radius: 4px;
+        padding: 4px;
+        font-size: 9pt;
+    }
+    
+    /* Checkbox */
+    QCheckBox {
+        color: #CCCCCC;
+        spacing: 8px;
+    }
+    
+    QCheckBox::indicator {
+        width: 16px;
+        height: 16px;
+    }
+    
+    QCheckBox::indicator:unchecked {
+        border: 2px solid #3E3E42;
+        background-color: #1E1E1E;
+        border-radius: 3px;
+    }
+    
+    QCheckBox::indicator:checked {
+        border: 2px solid #0E639C;
+        background-color: #0E639C;
+        border-radius: 3px;
+    }
+    
     /* Modern Scrollbar Design */
-    QListWidget::vertical-scrollbar:vertical {
+    QScrollBar:vertical {
         border: none;
-        background: transparent;
+        background: #252526;
         width: 14px;
         margin: 0px;
         border-radius: 0px;
     }
     
-    QListWidget::vertical-scrollbar::handle:vertical {
+    QScrollBar::handle:vertical {
         background: qlineargradient(
             spread:pad, x1:0, y1:0, x2:1, y2:0,
             stop:0 #565656, stop:0.5 #646464, stop:1 #565656
@@ -118,7 +212,7 @@ APP_STYLES = """
         margin: 3px 2px 3px 2px;
     }
     
-    QListWidget::vertical-scrollbar::handle:vertical:hover {
+    QScrollBar::handle:vertical:hover {
         background: qlineargradient(
             spread:pad, x1:0, y1:0, x2:1, y2:0,
             stop:0 #707070, stop:0.5 #7E7E7E, stop:1 #707070
@@ -126,7 +220,7 @@ APP_STYLES = """
         border: 1px solid #505050;
     }
     
-    QListWidget::vertical-scrollbar::handle:vertical:pressed {
+    QScrollBar::handle:vertical:pressed {
         background: qlineargradient(
             spread:pad, x1:0, y1:0, x2:1, y2:0,
             stop:0 #569CD6, stop:0.5 #4E94D1, stop:1 #569CD6
@@ -134,31 +228,28 @@ APP_STYLES = """
         border: 1px solid #3E7CB3;
     }
     
-    QListWidget::vertical-scrollbar::add-line:vertical, 
-    QListWidget::vertical-scrollbar::sub-line:vertical {
+    QScrollBar::add-line:vertical, 
+    QScrollBar::sub-line:vertical {
         border: none;
         background: none;
         height: 0px;
-        subcontrol-origin: margin;
-        subcontrol-position: top;
     }
     
-    QListWidget::vertical-scrollbar::add-page:vertical, 
-    QListWidget::vertical-scrollbar::sub-page:vertical {
+    QScrollBar::add-page:vertical, 
+    QScrollBar::sub-page:vertical {
         background: rgba(30, 30, 30, 150);
-        border-radius: 0px;
     }
     
-    /* Horizontal Scrollbar - Modern Style */
-    QListWidget::horizontal-scrollbar:horizontal {
+    /* Horizontal Scrollbar */
+    QScrollBar:horizontal {
         border: none;
-        background: transparent;
+        background: #252526;
         height: 14px;
         margin: 0px;
         border-radius: 0px;
     }
     
-    QListWidget::horizontal-scrollbar::handle:horizontal {
+    QScrollBar::handle:horizontal {
         background: qlineargradient(
             spread:pad, x1:0, y1:0, x2:0, y2:1,
             stop:0 #565656, stop:0.5 #646464, stop:1 #565656
@@ -169,7 +260,7 @@ APP_STYLES = """
         margin: 2px 3px 2px 3px;
     }
     
-    QListWidget::horizontal-scrollbar::handle:horizontal:hover {
+    QScrollBar::handle:horizontal:hover {
         background: qlineargradient(
             spread:pad, x1:0, y1:0, x2:0, y2:1,
             stop:0 #707070, stop:0.5 #7E7E7E, stop:1 #707070
@@ -177,7 +268,7 @@ APP_STYLES = """
         border: 1px solid #505050;
     }
     
-    QListWidget::horizontal-scrollbar::handle:horizontal:pressed {
+    QScrollBar::handle:horizontal:pressed {
         background: qlineargradient(
             spread:pad, x1:0, y1:0, x2:0, y2:1,
             stop:0 #569CD6, stop:0.5 #4E94D1, stop:1 #569CD6
@@ -185,35 +276,16 @@ APP_STYLES = """
         border: 1px solid #3E7CB3;
     }
     
-    QListWidget::horizontal-scrollbar::add-line:horizontal, 
-    QListWidget::horizontal-scrollbar::sub-line:horizontal {
-        border: none;
-        background: none;
-        width: 0px;
-    }
-    
-    QListWidget::horizontal-scrollbar::add-page:horizontal, 
-    QListWidget::horizontal-scrollbar::sub-page:horizontal {
-        background: rgba(30, 30, 30, 150);
-        border-radius: 0px;
-    }
-    
-    /* Scrollbar Corner */
-    QListWidget::corner {
-        background: #252526;
-        border: none;
-    }
-    
     /* Buttons */
     QPushButton {
         background-color: #0E639C;
         color: #FFFFFF;
         border: 1px solid #0E639C;
-        padding: 6px 12px;
+        padding: 8px 16px;
         border-radius: 4px;
         font-weight: bold;
         font-size: 9pt;
-        min-width: 70px;
+        min-width: 80px;
     }
     
     QPushButton:hover {
@@ -238,7 +310,7 @@ APP_STYLES = """
         background-color: #F44747;
         color: #FFFFFF;
         font-size: 9pt;
-        padding: 7px 14px;
+        padding: 8px 16px;
         border: 1px solid #F44747;
     }
     
@@ -252,6 +324,26 @@ APP_STYLES = """
         background-color: #D13434;
         color: #FFFFFF;
         border: 1px solid #D13434;
+    }
+    
+    QPushButton#success {
+        background-color: #4EC9B0;
+        color: #FFFFFF;
+        font-size: 9pt;
+        padding: 8px 16px;
+        border: 1px solid #4EC9B0;
+    }
+    
+    QPushButton#success:hover {
+        background-color: #5ED9C0;
+        color: #FFFFFF;
+        border: 1px solid #5ED9C0;
+    }
+    
+    QPushButton#success:pressed {
+        background-color: #3EB9A0;
+        color: #FFFFFF;
+        border: 1px solid #3EB9A0;
     }
     
     /* Progress Bar */
