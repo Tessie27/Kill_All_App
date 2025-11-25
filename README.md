@@ -18,6 +18,9 @@ A modern, user-friendly desktop application built with PyQt5 that helps you mana
 - **Progress Indicators**: Visual feedback for long operations
 - **Professional Styling**: Custom scrollbars, buttons, and animations
 
+  <img width="482" height="459" alt="Interface" src="https://github.com/user-attachments/assets/eecf342f-4ac0-42df-974d-93ec69c2c46e" />
+
+
 ### 🔧 Technical Features
 - **Automatic PyCache Cleanup**: Cleans Python cache directories on application close
 - **Safe Process Filtering**: Protects critical system processes from accidental closure
@@ -197,5 +200,6 @@ For issues and questions:
 4. Check Windows system requirements
 
 ---
+
 
 **Note**: This tool is designed for technical users who understand the implications of process termination. Use responsibly and always ensure important work is saved before closing applications.
